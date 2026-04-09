@@ -1,5 +1,6 @@
 {
-  "outputDirectory": "frontend",
+  "buildCommand": "cp -r frontend public",
+  "outputDirectory": "public",
   "rewrites": [
     { "source": "/simulate", "destination": "/api/index" },
     { "source": "/variance-visual", "destination": "/api/index" },
