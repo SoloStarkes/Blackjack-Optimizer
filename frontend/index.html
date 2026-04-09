@@ -650,7 +650,9 @@ const {
   Tooltip, Legend, ReferenceLine, ResponsiveContainer
 } = Recharts;
 
-const API = 'http://localhost:8000';
+const API = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:8000'
+  : '';
 
 /* ─── Formatters ─────────────────────────────────────────────────────────── */
 const fmtDollar  = (v, d=0) => v == null ? '—' : '$' + Math.abs(v).toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
