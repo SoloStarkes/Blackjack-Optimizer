@@ -650,7 +650,9 @@ const {
   Tooltip, Legend, ReferenceLine, ResponsiveContainer
 } = Recharts;
 
-const API = 'http://localhost:8000';
+const API = typeof window !== 'undefined' && window.location.hostname !== 'localhost'
+  ? ''   // production: use relative /api/... path (same origin via Vercel routing)
+  : 'http://localhost:8000';
 
 /* ─── Formatters ─────────────────────────────────────────────────────────── */
 const fmtDollar  = (v, d=0) => v == null ? '—' : '$' + Math.abs(v).toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
