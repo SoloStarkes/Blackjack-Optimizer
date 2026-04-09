@@ -1,6 +1,11 @@
 {
   "buildCommand": "cp -r frontend public",
   "outputDirectory": "public",
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "backend/**"
+    }
+  },
   "rewrites": [
     { "source": "/simulate", "destination": "/api/index" },
     { "source": "/variance-visual", "destination": "/api/index" },
